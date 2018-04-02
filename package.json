@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/eastFang/east-service#readme",
   "dependencies": {
-    "koa": "^2.5.0"
+    "koa": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "mysql": "^2.15.0"
   }
 }
