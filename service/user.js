@@ -1,17 +1,16 @@
 const Router = require("koa-router")
 const router = new Router()
+const baseAPI = "/api/user"
+const { query } = require("../database-operation")
 
 router.get("/all", async ctx => {
-  const list = [
-    {
-      a: 1,
-      b: 2,
-      c: 3
-    }
-  ]
-  ctx.body = list
+
+  const list = await query("select * from user")
+
+  ctx.body = JSON.stringify(list)
+  
 })
 
-module.exports = rootRouter => {
-  rootRouter.use("/api/user", router.routes(), router.allowedMethods())
+module.exports = (outRouter) => {
+  outRouter.use(baseAPI, router.routes(), router.allowedMethods())
 }
