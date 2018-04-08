@@ -1,19 +1,21 @@
 const mysql = require("mysql")
 const config = require("./config")
 
-/** 查询
- * 
+const getConnection = () => {
+  return mysql.createConnection(config.database)
+}
+
+/**
+ * 查询
  * @param {sql语句} sql 
  */
-const query = (sql) => {
-  const connection = mysql.createConnection(config.database)
-
+const query = (sql, params) => {
+  const connection = getConnection()
   connection.connect()
 
   return new Promise((resolve, reject) => {
-    connection.query(sql, (error, results, fields) => {
+    connection.query(sql, params, (error, results, fields) => {
       if (error) {
-        console.log(error)
         reject(error)
         return
       }
@@ -23,6 +25,12 @@ const query = (sql) => {
   })
 }
 
+/**
+ * 添加
+ */
+const insert = query
+
 module.exports = {
-  query
+  query,
+  insert
 }
