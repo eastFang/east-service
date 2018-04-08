@@ -1,7 +1,8 @@
 const React = require("react")
 const ReactDOM = require("react-dom")
+import Button from "./component/button/index.jsx"
 
 ReactDOM.render(
-  <h1>11111</h1>,
+  <Button />,
   document.getElementById("root")
 )
