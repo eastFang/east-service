@@ -43,6 +43,7 @@ module.exports = {
     alias: {
       component: path.resolve(__dirname, './app/component'),
       page: path.resolve(__dirname, './app/page'),
+      util: path.resolve(__dirname, './app/util'),
     }
   },
 }

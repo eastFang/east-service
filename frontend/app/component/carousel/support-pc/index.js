@@ -8,18 +8,52 @@ export default class extends React.Component {
     this.state = {
       activeIndex: 0,
     }
+    this.initConfig()
+  }
+
+  initConfig() {
+    const { interval, height } = this.props
+    this.interval = interval && Number.isInteger(interval) ? interval : 4000
+    this.height = height && Number.isInteger(height) ? height : 200
+  }
+
+  getStyle() {
+    const aStyle = {
+      transition: `all ease ${this.interval}ms`,
+      height: `${this.height}px`
+    }
+
+    return aStyle
   }
 
   componentDidMount() {
     this.timer = setInterval(() => {
-      this.setState({
-        activeIndex: (this.state.activeIndex + 1) % this.props.data.length
-      })
-    }, 2000)
+      this.doChangActiveIndex(this.state.activeIndex)
+    }, this.interval)
+  }
+
+  doChangActiveIndex(index) {
+    this.setState({
+      activeIndex: (index + 1) % this.props.data.length
+    })
+  }
+
+  _changActiveIndex(index) {
+    this.doChangActiveIndex(index - 1)
+    this.doClearInterval()
+    this.timer = setInterval(() => {
+      this.doChangActiveIndex(this.state.activeIndex)
+    }, this.interval)
+  }
+
+  doClearInterval() {
+    if (this.timer) {
+      clearInterval(this.timer)
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer)
+    this.doClearInterval()
   }
 
   render() {
@@ -27,11 +61,11 @@ export default class extends React.Component {
 
     return (
       <div className='ui-carousel'>
-        <ul className='content'>
+        <ul className='content' style={{ height: `${this.height}px` }}>
           {
             data.map((item, index) => {
               return (
-                <li class={this.state.activeIndex === index ? 'active' : null}>
+                <li class={this.state.activeIndex === index ? 'active' : null} style={this.getStyle()} >
                   <img src={item} />
                 </li>
               )
@@ -41,7 +75,7 @@ export default class extends React.Component {
         <ul className='control'>
           {
             data.map((item, index) => {
-              return <li class={this.state.activeIndex === index ? 'active' : null}></li>
+              return <li class={this.state.activeIndex === index ? 'active' : null} onMouseOver={this._changActiveIndex.bind(this, index)}></li>
             })
           }
         </ul>

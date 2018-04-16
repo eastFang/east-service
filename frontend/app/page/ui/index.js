@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Carousel } from 'component'
+import { isPC } from 'util'
 import './index.scss'
 
 export default class extends React.Component {
@@ -18,8 +19,9 @@ export default class extends React.Component {
     return (
       <div>
         <Button className={'btn-extend-class'} type={'primary'} size={'large'}/>
-        <Carousel.PC data={this.images}/>
-        <Carousel.MS />
+        {
+          isPC() ? <Carousel.PC data={this.images}/> : <Carousel.MS />
+        }
       </div>
     )
   }

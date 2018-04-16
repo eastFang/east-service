@@ -4,13 +4,12 @@
   position: relative;
 
   ul.content {
-    height: 430px;
+
     li {
       position: absolute;
       width: 100%;
       height: 100%;
       opacity: 0;
-      transition: all ease 2s;
 
       &.active {
         z-index: -1;
@@ -37,6 +36,8 @@
       margin-right: 10px;
       border-radius: 10px;
       background-color: #666;
+      cursor: pointer;
+
       &.active {
         background-color: $color-primary;
       }
