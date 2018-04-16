@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const path = require("path")
 
 module.exports = {
-  entry: "./app/index.jsx",
+  entry: "./app",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "js/index_bundle.js"
@@ -15,7 +15,7 @@ module.exports = {
   ],
   module: {
     rules: [{
-      test: /\.(jsx)$/,
+      test: /\.(jsx|js|es6)$/,
       exclude: /node_modules/,
       use: {
         loader: "babel-loader",

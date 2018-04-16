@@ -19,10 +19,20 @@ async function loadHtml(path) {
   }
 }
 
-router.get("/", async ctx => {
-  const $html = await loadHtml(path.resolve(__dirname, getAbsoluteHtmlPath("/index.html")))
-  if (!$html) return ctx.body = null
-  ctx.body = $html.html()
+/**
+ * 单页应用（/*）子路由都走index.html
+ */
+router.get("/*", async (ctx, next) => {
+  const lastPointIndex = ctx.path.lastIndexOf(".")
+  const excludeResource = ["js", "css"]
+  if (ctx.path.indexOf("/api") === -1 // 排除请求api
+  && !excludeResource.includes(lastPointIndex) // 排除请求js、css静态资源
+  ) {
+    const $html = await loadHtml(path.resolve(__dirname, getAbsoluteHtmlPath("/index.html")))
+    if (!$html) return ctx.body = null
+    ctx.body = $html.html()
+  }
+  await next()
 })
 
 require("./user")(router)

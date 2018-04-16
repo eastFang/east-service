@@ -1,0 +1,21 @@
+.wrap {
+  .pc-img {
+    display: block;
+  }
+
+  .m-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .wrap {
+    .pc-img {
+      display: none;
+    }
+
+    .m-img {
+      display: block;
+    }
+  }
+}
