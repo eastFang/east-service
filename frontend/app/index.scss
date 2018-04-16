@@ -4,8 +4,11 @@ body,
   height: 100%;
 }
 
-*:disabled {
-  cursor: not-allowed;
+* {
+  padding: 0;
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 button {

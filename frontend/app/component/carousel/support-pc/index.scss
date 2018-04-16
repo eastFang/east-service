@@ -1,18 +1,44 @@
+@import "../../theme.scss";
+
 .ui-carousel {
   position: relative;
 
   ul.content {
+    height: 430px;
     li {
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
+      width: 100%;
+      height: 100%;
       opacity: 0;
       transition: all ease 2s;
 
       &.active {
         z-index: -1;
         opacity: 1;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  ul.control {
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 10px;
+      background-color: #666;
+      &.active {
+        background-color: $color-primary;
       }
     }
   }

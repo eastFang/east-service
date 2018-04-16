@@ -40,8 +40,8 @@ export default class extends React.Component {
         </ul>
         <ul className='control'>
           {
-            data.map((item) => {
-              return <li></li>
+            data.map((item, index) => {
+              return <li class={this.state.activeIndex === index ? 'active' : null}></li>
             })
           }
         </ul>
