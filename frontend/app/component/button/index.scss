@@ -1,8 +1,45 @@
-.btn-ui {
-  background-color: white;
-  width: 150px;
-  height: 32px;
-  line-height: 32px;
+@import "../theme.scss";
+
+$btn-width: 80px;
+
+$btn-large-height: 32px;
+$btn-medium-height: 28px;
+$btn-small-height: 24px;
+
+.ui-btn {
+  width: 100%;
+  padding: 0;
   text-align: center;
   border: 1px solid #dfdfdf;
+  box-sizing: border-box;
+
+  &:active {
+    opacity: .5;
+  }
+  
+  // 列举几个常用的btn
+  &.btn-bg-primary {
+    background-color: $color-primary;
+    color: $white;
+  }
+
+  &.btn-bg-info {
+    background-color: $white;
+    color: $color-text-1st;
+  }
+
+  &.btn-size-large {
+    width: $btn-width;
+    height: $btn-large-height;
+  }
+
+  &.btn-size-medium {
+    width: $btn-width;
+    height: $btn-medium-height;
+  }
+
+  &.btn-size-small {
+    width: $btn-width;
+    height: $btn-small-height;
+  }
 }

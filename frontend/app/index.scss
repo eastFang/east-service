@@ -1,0 +1,18 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+*:disabled {
+  cursor: not-allowed;
+}
+
+button {
+  outline: 0;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}

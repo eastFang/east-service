@@ -5,7 +5,7 @@ module.exports = {
   entry: "./app",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "js/index_bundle.js"
+    filename: "js/index_bundle.js",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -22,7 +22,8 @@ module.exports = {
         options: {
           presets: [
             "es2015",
-            "react"
+            "react",
+            "stage-3",
           ]
         }
       }
@@ -37,5 +38,11 @@ module.exports = {
         loader: "sass-loader"
       }]
     }]
-  }
+  },
+  resolve: {
+    alias: {
+      component: path.resolve(__dirname, './app/component'),
+      page: path.resolve(__dirname, './app/page'),
+    }
+  },
 }

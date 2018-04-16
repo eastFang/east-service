@@ -1,5 +1,7 @@
 import Button from './button'
+import Carousel from './carousel'
 
 export {
-  Button
+  Button,
+  Carousel,
 }

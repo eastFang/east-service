@@ -14,6 +14,9 @@ export default class extends React.Component {
         <Link to={'/about'}>
           去关于我们
         </Link>
+        <Link to={'/ui'}>
+          去UI组件库
+        </Link>
       </div>
     )
   }

@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
+    "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.11",
     "fs": "0.0.1-security",
     "koa": "^2.5.0",
