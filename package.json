@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",
-    "watch": "cd frontend && webpack -w",
+    "watch": "cd frontend && webpack -w --progress --color",
     "rebuild": "cd frontend && rm -rf dist && webpack -w"
   },
   "repository": {
