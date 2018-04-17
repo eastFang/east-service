@@ -4,7 +4,9 @@
 koa2-router: https://chenshenhai.github.io/koa2-note/note/jsonp/info.html
 
 # fronend
-webpack react
+webpack
+react
+react-router: v4, only react-router-dom 用于web
 
 <!-- todo -->
-react-router dva fetch?
+dva fetch?
