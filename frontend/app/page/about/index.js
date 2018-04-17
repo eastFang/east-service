@@ -7,7 +7,7 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-        关于我们
+        关于
       </div>
     )
   }

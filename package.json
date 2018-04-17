@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",
-    "watch": "cd frontend && webpack -w --progress --color",
-    "rebuild": "cd frontend && rm -rf dist && webpack -w"
+    "watch": "cd frontend && webpack -w --progress --color --mode=development",
+    "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js -w --progress --color --mode=development",
+    "rebuild": "cd frontend && rm -rf dist && webpack -w --progress --color --mode=development"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,6 @@
     "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
     "compass-mixins": "^0.12.10",
-    "css-loader": "^0.28.11",
     "fs": "0.0.1-security",
     "koa": "^2.5.0",
     "koa-cors": "0.0.16",
@@ -37,12 +37,14 @@
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.20.3"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
+    "css-loader": "^0.14.5",
+    "happypack": "^5.0.0-beta.3",
     "html-webpack-plugin": "^3.2.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
     "webpack": "^4.5.0",
     "webpack-cli": "^2.0.14"
   }

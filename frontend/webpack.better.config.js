@@ -15,12 +15,9 @@ module.exports = {
       template: "./app/index.html"
     }),
     new ModuleConcatenationPlugin(),
-  ],
-  module: {
-    rules: [{
-      test: /\.(jsx|js|es6)$/,
-      exclude: /node_modules/,
-      use: {
+    new HappyPack({
+      id: "babel",
+      loaders: [{
         loader: "babel-loader",
         options: {
           presets: [
@@ -29,7 +26,15 @@ module.exports = {
             "stage-3",
           ]
         }
-      }
+      }],
+    }),
+  ],
+  module: {
+    rules: [{
+      test: /\.(jsx|js|es6)$/,
+      exclude: /node_modules/,
+      include: path.resolve(__dirname, "./app"),
+      loader: "happypack/loader?id=babel",
     }, {
       test: /\.(scss)$/,
       exclude: /node_modules/,
