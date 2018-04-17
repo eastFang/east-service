@@ -17,6 +17,7 @@ module.exports = {
     new ModuleConcatenationPlugin(),
     new HappyPack({
       id: "babel",
+      cache: false,
       loaders: [{
         loader: "babel-loader",
         options: {

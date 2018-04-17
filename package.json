@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",
     "watch": "cd frontend && webpack -w --progress --color --mode=development",
-    "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js -w --progress --color --mode=development",
-    "rebuild": "cd frontend && rm -rf dist && webpack -w --progress --color --mode=development"
+    "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js --progress --color --mode=development",
+    "rebuild": "cd frontend && rm -rf dist && webpack --progress --color --mode=development"
   },
   "repository": {
     "type": "git",
