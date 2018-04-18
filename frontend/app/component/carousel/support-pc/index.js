@@ -12,15 +12,16 @@ export default class extends React.Component {
   }
 
   initConfig() {
-    const { interval, height } = this.props
+    const { interval, height, width } = this.props
     this.interval = interval && Number.isInteger(interval) ? interval : 4000
     this.height = height && Number.isInteger(height) ? height : 200
+    this.width = width ? `${width}px`: '100%'
   }
 
   getStyle() {
     const aStyle = {
-      transition: `all ease ${this.interval}ms`,
-      height: `${this.height}px`
+      height: `${this.height}px`,
+      width: this.width,
     }
 
     return aStyle
@@ -60,12 +61,12 @@ export default class extends React.Component {
     const { data } = this.props
 
     return (
-      <div className='ui-carousel'>
-        <ul className='content' style={{ height: `${this.height}px` }}>
+      <div className='ui-carousel' style={this.getStyle()}>
+        <ul className='content'>
           {
             data.map((item, index) => {
               return (
-                <li class={this.state.activeIndex === index ? 'active' : null} style={this.getStyle()} >
+                <li className={this.state.activeIndex === index ? 'active' : null} style={{ transition: `all ease ${this.interval}ms` }} key={index}>
                   <img src={item} />
                 </li>
               )
@@ -75,7 +76,7 @@ export default class extends React.Component {
         <ul className='control'>
           {
             data.map((item, index) => {
-              return <li class={this.state.activeIndex === index ? 'active' : null} onMouseOver={this._changActiveIndex.bind(this, index)}></li>
+              return <li className={this.state.activeIndex === index ? 'active' : null}onMouseOver={this._changActiveIndex.bind(this, index)} key={index}></li>
             })
           }
         </ul>

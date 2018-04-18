@@ -19,13 +19,22 @@ $btn-small-height: 24px;
   
   // 列举几个常用的btn
   &.btn-bg-primary {
-    background-color: $color-primary;
+    background-color: $color-primary; // 主色背景、白色字体
     color: $white;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 
   &.btn-bg-info {
-    background-color: $white;
+    background-color: $white; // 白色背景
     color: $color-text-1st;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $white;
+    }
   }
 
   &.btn-size-large {
