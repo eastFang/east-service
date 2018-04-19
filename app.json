@@ -2,6 +2,6 @@
   "uid": "app",
   "append": true,
   "watch": true,
-  "script": "npm run start",
-  "sourceDir": "/home/ubuntu/workspace/east-service"
+  "script": "index.js",
+  "sourceDir": "./backend"
 }
