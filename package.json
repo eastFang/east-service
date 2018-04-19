@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",
+    "forever-start": "forever start --minUptime 1000 --spinSleepTime 1000 backend/index.js",
     "watch": "cd frontend && webpack -w --progress --color --mode=development",
     "production": "cd frontend && webpack",
     "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js --progress --color --mode=development",
