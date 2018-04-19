@@ -1,10 +1,17 @@
 .ui-btns-box {
   width: 1200px;
   padding: 20px 0;
+  margin: 0 auto;
+
+  button {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .ui-btns-box {
+    width: auto;
     padding: 10px;
   }
 }

@@ -14,7 +14,7 @@ export default class extends React.Component {
 
   renderButton() {
     return (
-      <div class='ui-btns-box'>
+      <div className='ui-btns-box'>
         <Button type={'primary'} size={'large'} />
         <Button type={'info'} size={'large'} />
       </div>

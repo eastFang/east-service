@@ -20,6 +20,7 @@ $btn-small-height: 24px;
   // 列举几个常用的btn
   &.btn-bg-primary {
     background-color: $color-primary; // 主色背景、白色字体
+    border-color: $color-primary;
     color: $white;
 
     &:hover {
@@ -33,6 +34,7 @@ $btn-small-height: 24px;
 
     &:hover {
       background-color: $color-primary;
+      border-color: $color-primary;
       color: $white;
     }
   }
