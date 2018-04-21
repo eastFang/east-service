@@ -14,7 +14,8 @@ npm run watch
 
 npm run start
 
-localhost:8888访问
 
 # 特点
 响应式布局、单页应用
+
+# 添加opn模块，自动打开浏览器
