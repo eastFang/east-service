@@ -11,11 +11,11 @@ export default class extends React.Component {
       'http://img04.taobaocdn.com/imgextra/i4/85394294/T2uFl9XkNXXXXXXXXX_!!85394294.png',
     ]
     this.MSImages = [
-      'http://img.shop.hisense.com/2018/04/20/1699d609-bf23-4521-a962-610654bd11fa.jpg?x-oss-process=image/resize,m_fixed,h_661/format,webp/quality,q_100',
-      'http://img.shop.hisense.com/2018/04/20/04739cbe-0fd1-41cd-91f0-7035de015d3d.jpg?x-oss-process=image/resize,m_fixed,h_661/format,webp/quality,q_100',
-      'http://img.shop.hisense.com/2018/04/20/38b0eb06-0065-4276-80ed-2932f691d1ce.jpg?x-oss-process=image/resize,m_fixed,h_661/format,webp/quality,q_100',
-      'http://img.shop.hisense.com/2018/03/26/f9302a6e-df6d-4b4c-b268-774715c4a135.jpg?x-oss-process=image/resize,m_fixed,h_661/format,webp/quality,q_100',
-      'http://img.shop.hisense.com/2018/03/26/2efd92aa-ce9b-47b2-b1eb-712f7a2dbf9b.jpg?x-oss-process=image/resize,m_fixed,h_661/format,webp/quality,q_100'
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1106007789,1634881763&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3965449651,1308881456&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=684945823,3798775927&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1178237420,4250894565&fm=27&gp=0.jpg',
+      'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=533955153,3306180285&fm=27&gp=0.jpg'
     ]
   }
 
