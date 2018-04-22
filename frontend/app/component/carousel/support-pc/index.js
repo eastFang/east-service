@@ -61,7 +61,7 @@ export default class extends React.Component {
     const { data } = this.props
 
     return (
-      <div className='ui-carousel' style={this.getStyle()}>
+      <div className='ui-carousel-pc' style={this.getStyle()}>
         <ul className='content'>
           {
             data.map((item, index) => {
