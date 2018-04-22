@@ -20,7 +20,7 @@ export default class extends React.Component {
     this.initTranslateX = 0 // 初始化translateX值
     this.direction = 'left'
     this.clientWidth = document.body.clientWidth
-    this.touchSlideNext = this.clientWidth / 2
+    this.touchSlideNext = this.clientWidth / 5
   }
 
   _onTouchStart(evt) {
