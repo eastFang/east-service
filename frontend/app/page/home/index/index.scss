@@ -1,0 +1,52 @@
+@import "~component/theme.scss";
+
+.wrap {
+  .pc-img {
+    display: block;
+  }
+
+  .m-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrap {
+    .pc-img {
+      display: none;
+    }
+
+    .m-img {
+      display: block;
+    }
+  }
+}
+
+.bis-card-list {
+  li {
+    float: left;
+    width: 380px;
+    height: 380px;
+    padding: 10px;
+    transition: all ease .2s;
+    margin: 10px;
+
+    &:hover {
+      box-shadow: 0 5px 5px 5px $color-background;
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+    }
+
+    p {
+      margin: 15px 0;
+    }
+
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

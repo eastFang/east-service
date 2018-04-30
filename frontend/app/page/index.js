@@ -1,4 +1,4 @@
-import Home from './home/connect'
+import Home from './home/index/connect'
 import About from './about'
 import Error from './error'
 import UI from './ui'
