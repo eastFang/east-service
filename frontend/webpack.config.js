@@ -5,33 +5,34 @@ const path = require("path")
 
 module.exports = {
   entry: {
-    index: "./app/index.js",
+    main: "./app/index.js",
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "js/[name].bundle.js",
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].bundle.js"
   },
-  optimization: {
-    splitChunks: {
-      chunks: "async",
-      cacheGroups: {
-        common: {
-          name: "common",
-          chunks: "initial",
-          minChunks: 2,
-        },
-        base: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "base",
-          chunks: "all",
-        },
-        default: false,
-      }
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "async",
+  //     cacheGroups: {
+  //       common: {
+  //         name: "common",
+  //         chunks: "initial",
+  //         minChunks: 2,
+  //       },
+  //       base: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: "base",
+  //         chunks: "all",
+  //       },
+  //       default: false,
+  //     }
+  //   }
+  // },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "html/index.html",
+      filename: "index.html",
       template: "./app/index.html"
     }),
     new ModuleConcatenationPlugin(),
@@ -47,7 +48,7 @@ module.exports = {
             "es2015",
             "react",
             "stage-3",
-          ]
+          ],
         }
       }
     }, {
@@ -60,16 +61,6 @@ module.exports = {
       }, {
         loader: "sass-loader"
       }]
-    }, {
-      test: /\.bundle\.js$/,
-      include: path.join(__dirname, 'app'),
-      use: {
-        loader: 'bundle-loader',
-        options: {
-          lazy: true,
-          name: '[name]'
-        }
-      }
     }]
   },
   resolve: {
@@ -79,4 +70,5 @@ module.exports = {
       util: path.resolve(__dirname, './app/util'),
     }
   },
+  devtool: 'source-map' // 输出 source-map 方便直接调试 ES6 源码
 }

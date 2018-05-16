@@ -6,9 +6,9 @@
   "scripts": {
     "dev-start": "node backend/index.js",
     "prod-start": "forever start --minUptime 1000 --spinSleepTime 1000 backend/index.js",
-    "dev-watch": "cd frontend && webpack -w --progress --color --mode=development",
-    "dev-nowatch": "cd frontend && rm -rf dist && webpack --progress --color --mode=development",
-    "prod-nowatch": "cd frontend && webpack",
+    "dev-watch": "cd frontend && ../node_modules/webpack/bin/webpack.js -w --progress --color --mode=development",
+    "dev-nowatch": "cd frontend && rm -rf dist && ../node_modules/webpack/bin/webpack.js --progress --color --mode=development",
+    "prod-nowatch": "cd frontend && rm -rf dist && webpack",
     "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js --progress --color --mode=development",
     "rebuild": "cd frontend && rm -rf dist && webpack --progress --color --mode=development"
   },
@@ -26,6 +26,7 @@
     "ajv": "^6.4.0",
     "aws-sign2": "^0.6.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
     "bundle-loader": "^0.5.6",

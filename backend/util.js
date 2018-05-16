@@ -27,7 +27,7 @@ const simplifyArr = (originArr) => {
 }
 
 const getAbsoluteHtmlPath = (htmlPath) => {
-  return path.resolve(__dirname, `../frontend/dist/html/${htmlPath}`)
+  return path.resolve(__dirname, `../frontend/dist/${htmlPath}`)
 }
 
 module.exports = {
