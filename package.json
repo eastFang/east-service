@@ -7,6 +7,7 @@
     "dev-start": "node backend/index.js",
     "prod-start": "forever start --minUptime 1000 --spinSleepTime 1000 backend/index.js",
     "dev-watch": "cd frontend && webpack -w --progress --color --mode=development",
+    "dev-nowatch": "cd frontend && rm -rf dist && webpack --progress --color --mode=development",
     "prod-nowatch": "cd frontend && webpack",
     "rebuild-better": "cd frontend && rm -rf dist && webpack --config webpack.better.config.js --progress --color --mode=development",
     "rebuild": "cd frontend && rm -rf dist && webpack --progress --color --mode=development"
@@ -27,6 +28,7 @@
     "babel-loader": "^7.1.4",
     "babel-preset-react": "^6.24.1",
     "bluebird": "^3.5.1",
+    "bundle-loader": "^0.5.6",
     "cheerio": "^1.0.0-rc.2",
     "compass-mixins": "^0.12.10",
     "fs": "0.0.1-security",

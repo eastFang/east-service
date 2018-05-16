@@ -1,13 +1,33 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin')
-const HappyPack = require("happypack")
+const webpack = require("webpack")
 const path = require("path")
 
 module.exports = {
-  entry: "./app",
+  entry: {
+    index: "./app/index.js",
+  },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "js/index_bundle.js",
+    filename: "js/[name].bundle.js",
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "async",
+      cacheGroups: {
+        common: {
+          name: "common",
+          chunks: "initial",
+          minChunks: 2,
+        },
+        base: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "base",
+          chunks: "all",
+        },
+        default: false,
+      }
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -40,6 +60,16 @@ module.exports = {
       }, {
         loader: "sass-loader"
       }]
+    }, {
+      test: /\.bundle\.js$/,
+      include: path.join(__dirname, 'app'),
+      use: {
+        loader: 'bundle-loader',
+        options: {
+          lazy: true,
+          name: '[name]'
+        }
+      }
     }]
   },
   resolve: {

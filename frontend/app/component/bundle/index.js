@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 
 export default class extends Component {
-  state = {
-    mod: null,
+  constructor(props) {
+    super(props)
+    this.state = {
+      mod: null
+    }
   }
 
   componentWillMount() {
