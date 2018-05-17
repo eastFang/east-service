@@ -49,6 +49,9 @@ module.exports = {
             "react",
             "stage-3",
           ],
+          plugins: [
+            "syntax-dynamic-import",
+          ]
         }
       }
     }, {
