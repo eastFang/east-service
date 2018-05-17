@@ -1,6 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router1, Switch, Route, HashRouter as Router } from 'react-router-dom'
-import { Home, About, Error, UI } from 'page'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 /**
  * 异步加载组件
@@ -12,11 +11,17 @@ function getAsyncComponent(load) {
 
     componentDidMount() {
       // 在高阶组件 DidMount 时才去执行网络加载步骤
-      load().then(({default: component}) => {
+      load()
+      .then(({default: component}) => {
         // 代码加载成功，获取到了代码导出的值，调用 setState 通知高阶组件重新渲染子组件
         this.setState({
           component,
         })
+      }, (error) => {
+        console.log(error)
+      })
+      .catch((error) => {
+        console.log(error)
       });
     }
 
@@ -31,8 +36,10 @@ function getAsyncComponent(load) {
 export default () => {
   return (
     <Router>
-      <div>
-        <Route exact path='/' component={Home}></Route>
+      <Switch>
+        <Route exact path='/' component={getAsyncComponent(
+          () => import(/* webpackChunkName: "page-index" */'./page/home/index/connect')
+        )}></Route>
         <Route path='/about' component={getAsyncComponent(
           () => import(/* webpackChunkName: "page-about" */'./page/about')
         )} />
@@ -42,7 +49,7 @@ export default () => {
         <Route path='*' component={getAsyncComponent(
           () => import(/* webpackChunkName: "page-error" */'./page/error')
         )} />
-      </div>
+      </Switch>
     </Router>
   )
 }
