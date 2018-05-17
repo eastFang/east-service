@@ -6,8 +6,8 @@ webpack
 react
 react-router: v4, only react-router-dom 用于web
 redux react-redux
-## 打包优化
-optimization.splitChunks引入，将node_modules里面的库全部打包到base.js里面；将两个以上js引入相同部分的模块打包到common.js
+## 动态加载
+webpack版本3以上、结合react-router,利用import('XX')语法动态引入;
 
 # 本地开发 - 项目启动
 npm run dev-watch
