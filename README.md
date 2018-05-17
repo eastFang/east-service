@@ -7,7 +7,7 @@ react
 react-router: v4, only react-router-dom 用于web
 redux react-redux
 ## 动态加载
-webpack版本3以上、结合react-router,利用import('XX')语法动态引入，按需加载js
+webpack版本3以上、结合react-router,利用import('XX')语法动态引入，按需加载js;
 
 # 本地开发 - 项目启动
 npm run dev-watch
